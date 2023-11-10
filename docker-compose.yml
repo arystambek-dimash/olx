@@ -1,11 +1,14 @@
+version: '3.8'
+
 services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
+  my-python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/code
     environment:
-      FASTAPI_DEBUG: "true"
-  redis:
-    image: "redis:alpine"
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    command: ["sh", "./scripts/launch.sh"]

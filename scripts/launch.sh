@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set defaults if not provided in environment
-: "${MODULE_NAME:=app.main}"
+: "${MODULE_NAME:=main}"
 : "${VARIABLE_NAME:=app}"
 : "${APP_MODULE:=$MODULE_NAME:$VARIABLE_NAME}"
 : "${HOST:=0.0.0.0}"
