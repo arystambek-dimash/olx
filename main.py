@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from config import database, settings
 from app.auth.routers import router
-
 database.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(**settings.fastapi_config)
